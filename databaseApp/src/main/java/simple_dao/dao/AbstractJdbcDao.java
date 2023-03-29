@@ -4,8 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 
-public abstract class AbstractJdbcDao<E> {
+public abstract class AbstractJdbcDao {
 
     private static final String URL = "jdbc:mysql://localhost:3306/carshop";
     private static final String LOGIN = "root";
@@ -23,13 +24,19 @@ public abstract class AbstractJdbcDao<E> {
         return connection;
     }
 
-    protected void disposeResources(Connection connection, PreparedStatement preparedStatement) {
-        if (connection != null && preparedStatement != null) {
+    protected void disposeResources(Connection connection, Statement statement) {
+        if (connection != null) {
             try {
                 connection.close();
-                preparedStatement.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
+            } catch (SQLException exception) {
+                exception.printStackTrace();
+            }
+        }
+        if (statement != null) {
+            try {
+                statement.close();
+            } catch (SQLException exception) {
+                exception.printStackTrace();
             }
         }
     }
