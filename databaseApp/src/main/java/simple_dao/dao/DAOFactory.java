@@ -1,16 +1,11 @@
 package simple_dao.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
 /**
  * Created by Asus on 31.01.2018.
  */
 public class DAOFactory implements IDAOFactory {
 
     private static IDAOFactory factory;
-
     private DAOFactory() {
         registerDriver();
     }
@@ -43,7 +38,7 @@ public class DAOFactory implements IDAOFactory {
 
     @Override
     public ClientDAO getClientDAO() {
-        return null;
+        return new ClientJDBCDao();
     }
 
 }

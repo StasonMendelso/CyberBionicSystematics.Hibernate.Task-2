@@ -1,4 +1,4 @@
-package simple_dao;
+package simple_dao.service;
 
 
 
