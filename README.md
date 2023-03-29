@@ -2,7 +2,7 @@
 
 ## What is the project about?
 
-Repository is for educational purpose - doing a [home-task №2](JDBC & Hibernate_ Домашнее задание 2.pdf) on
+Repository is for educational purpose - doing a [home-task №2](JDBC%20&%20Hibernate_%20Домашнее%20задание%202.pdf) on
 the [course][1]. I am enrolled in the [course][1] about Hibernate framework, where the topic of [JDBC][3] is attached.
 So, my second task is about connection to the database using only the JDBC and write the implementation of next DAO
 class. The last point of task is write the console app for practice.
